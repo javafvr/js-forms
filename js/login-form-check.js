@@ -35,12 +35,12 @@ $(document).ready(function() {
 				$.each(inputs, function(index, val){
 					var input = $(val),
 						value = input.val().trim();
-						msg = 'Комментарий не может быть пустым.';
+						msg = input.attr('data-error');
 						required = input.attr('data-valid') =='required';
 						inputType = input.attr('type').toLowerCase();
 
 					if (value !=='') {
-						
+
 						// email validate
 						if (inputType === 'email') {
 								var pattern = /^[a-z0-9\u007F-\uffff!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9\u007F-\uffff!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$/i;
@@ -51,28 +51,15 @@ $(document).ready(function() {
 									formValidation._showError(val, msg);
 								} else{
 									login = value;
-									// isValid = true;
 								}
 							}
 
 						// password validate
 						if (inputType === 'password') {
-								// required=false;
 								password=value;
-								// isValid = true;
 							}
-
 					} else{
 						if (required) {
-							switch(inputType) {
-								case 'email':  msg = 'Введите email';
-								break;
-								case 'password': msg = 'Введите пароль';
-								break;
-								default: msg = '*';
-								break;
-							}
-
 						 	event.preventDefault();
 							isValid = false;
 							formValidation._showError(val, msg);
@@ -84,7 +71,8 @@ $(document).ready(function() {
 			},
 			
 			_showError: function(val, msg) {
-				var	_errorMsg = $('<div class="error error-hide">'+msg+'</div>');
+				console.log(val);
+				var	_errorMsg = $('<div class="error error-hide">' + msg + '</div>');
 				_errorMsg.insertBefore(val);
 				_errorMsg.fadeIn(2000);
 			},
