@@ -7,3 +7,16 @@
   margin-top: 55px;
   margin-bottom: 55px;
 }
+
+.error{
+	display: none;
+}
+
+.error-description{
+	display: none;
+}
+
+.button--login{
+	line-height: 1;
+	padding-top: 0;
+}
