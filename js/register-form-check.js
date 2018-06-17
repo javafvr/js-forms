@@ -5,9 +5,7 @@ $(document).ready(function() {
 			_errorMsg = _form.find('.error'),
 			_validEmail = 'mail@mail.com',
 			_validPass ='123',
-			_typeForm = _form;
-			console.log(_typeForm);
-
+			_typeForm = _form.attr('data-form-type');
 
 		var formValidation = {
 			isValid: true,
@@ -81,9 +79,6 @@ $(document).ready(function() {
 			},
 			
 			_showErrorWithDescr: function(val) {
-				
-				console.log(formValidation._typeForm);
-				
 				if(_typeForm == 'registration'){
 					_errorMsg = $('<div class="error error--with-desc">Данный email уже занят</div><div class="error-description"><p>Используйте другой email чтобы создать новый аккаунт.</p><p>Или воспользуйтесь <a href="#">восстановлением пароля</a>, чтобы войти на сайт.</p></div>');
 				} else if (_typeForm == 'login') {
@@ -100,16 +95,21 @@ $(document).ready(function() {
 			},
 
 			_checkAccess: function(login, password) {
-				console.log('test');
 				if (isValid) {
+					if(_typeForm =='registration'){
+						if (login == _validEmail) {
+							event.preventDefault();
+							formValidation._showErrorWithDescr(event.target);
+						}
+					} else if(_typeForm =='login'){
+						if (login == _validEmail && password == _validPass) {
 
-					if (login == _validEmail && password == _validPass) {
-
-					} else {
-					
-						event.preventDefault();
-						formValidation._showErrorWithDescr(event.target);
-					
+						} else {
+						
+							event.preventDefault();
+							formValidation._showErrorWithDescr(event.target);
+						
+						}
 					}
 				}
 			}
