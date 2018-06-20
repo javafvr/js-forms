@@ -22,30 +22,34 @@
 				</div>
 			</div><a class="link" href="registration.html">Регистрация</a>
 		</div>
-		<form class="plate" action="success.html">
+		<form id='form' class="plate" action="success.html" novalidate>
 			<div class="plate__heading">Вход на сайт</div>
-			<div class="error">Введите email</div>
+<!-- 			<div class="error">Введите email</div>
 			<div class="error">Неверный формат email</div>
 			<div class="error">Введите пароль</div>
 			<div class="error error--with-desc">Неверный email или пароль</div>
-			<div class="error-description">
+			<div class="error error-description">
 				<p>Введите верные данные для входа или воспользуйтесь <a href="#">восстановлением пароля, </a>чтобы войти на сайт.</p>
-			</div>
-			<input class="input" type="text" placeholder="Введите имя" name="name"/>
-			<input class="input" type="password" placeholder="Пароль" name="password"/>
+			</div> -->
+			<input class="input" type="email" placeholder="Введите email" name="name" data-valid='required' data-error = "Введите email"/>
+			<input class="input" type="password" placeholder="Пароль" name="password" data-valid='required' data-error = "Введите пароль"/>
 			<div class="plate__links">
 				<label class="label form__label-checkbox">
 					<input class="form__input-checkbox" type="checkbox"/><span class="form__checkbox"> </span>Запомнить меня
 				</label><a class="link" href="#">Забыл пароль</a>
-			</div><a class="button button--login" href="#">Войти<span class="button__icon button__icon--right"><i class="fas fa-angle-right"> </i></span></a>
+			</div>
+			<button type="submit" class="button button--login" href="#"/>Войти
+				<span><i class="fas fa-angle-right"></i></span>
+			</button>
 	</form>
+		</form>
 	<div class="login-footer">
 		<p>&copy; Юрий Ключевский</p>
 		<p>Создано с <i class="fas fa-heart color-heart"></i> в <a href="//webcademy.ru" class="link" target="_blank">WebCademy.ru</a> в 2018 году</p>
 	</div>
 </div>
 <script src="libs/jquery/jquery.min.js"></script>
-<script src="js/main.js"></script>
-<script defer="defer" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<script src="js/login-form-check.js"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
 </body>
 </html>
