@@ -7,3 +7,12 @@
   margin-top: 55px;
   margin-bottom: 55px;
 }
+
+.button{
+	line-height: 1px;
+	padding-top: 0;
+}
+
+.error-hide{
+	display: none;
+}

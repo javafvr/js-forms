@@ -21,18 +21,19 @@
 			<div class="avatar_small"><img src="img/foto-small-2.png"/></div>
 			<div class="content">
 				<div class="head">
-					<form action="success.html">
+					<form id="form" action="success.html">
 						<div class="comment__name">Юрий Ключевский</div>
-						<div class="error">Комментарий не может быть пустым.</div>
+						<div class="error error-hide">Комментарий не может быть пустым.</div>
 						<label class="label-title"></label>
-						<textarea class="textarea" name="null" placeholder="Присоединиться к обсуждению..."></textarea><a class="button button--regular">Опубликовать	</a>
+						<textarea class="textarea" name="null" placeholder="Присоединиться к обсуждению..."></textarea><input type = 'submit' class="button button--regular" value = 'Опубликовать'>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 	<script src="libs/jquery/jquery.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="js/validate-comments.js"></script>
+	<!-- <script src="js/main.js"></script> -->
 	<script defer="defer" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   </body>
   </html>
