@@ -22,23 +22,15 @@
 				</div>
 			</div><a class="link" href="login.html">Вход</a>
 		</div>
-		<form class="plate" action="success.html">
+		<form id="form" class="plate" action="success.html" data-form-type = "registration" novalidate>
 			<div class="plate__heading">Регистрация</div>
-			<div class="error">Введите email</div>
-			<div class="error">Неверный формат email</div>
-			<div class="error">Введите пароль</div>
-			<div class="error error--with-desc">Данный email уже занят</div>
-			<div class="error-description">
-				<p>Используйте другой email чтобы создать новый аккаунт.</p>
-				<p>Или воспользуйтесь <a href="#">восстановлением пароля</a>, чтобы войти на сайт.</p>
-			</div>
-			<input class="input" type="text" placeholder="Введите имя" name="name"/>
-			<input class="input" type="password" placeholder="Пароль" name="password"/>
+			<input class="input" type="email" placeholder="Введите email" name="name" data-valid="required" data-error="Введите email"/>
+			<input class="input" type="password" placeholder="Пароль" name="password" data-valid="required" data-error="Введите пароль"/>
 			<div class="plate__links">
 				<label class="label form__label-checkbox">
 					<input class="form__input-checkbox" type="checkbox"/><span class="form__checkbox"> </span>Запомнить меня
 				</label><a class="link" href="#">Забыл пароль</a>
-			</div><a class="button button--login" href="#">Регистрация<span class="button__icon button__icon--right"><i class="fas fa-angle-right"> </i></span></a>
+			</div><button type="submit" class="button button--login" href="#">Регистрация<span class="button__icon button__icon--right"><i class="fas fa-angle-right"></i></span></button>
 		</form>
 		<div class="login-footer">
 			<p>&copy; Юрий Ключевский</p>
@@ -46,7 +38,7 @@
 		</div>
 	</div>
 	<script src="libs/jquery/jquery.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="js/register-form-check.js"></script>
 	<script defer="defer" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </body>
 </html>
